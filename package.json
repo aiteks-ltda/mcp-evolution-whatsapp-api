@@ -23,6 +23,7 @@
   "scripts": {
     "build": "bun build ./src/main.ts --outdir dist --target node && chmod +x dist/main.js",
     "start": "bun run dist/main.ts",
+    "dev": "bun --hot src/main.ts",
     "test": "bun test",
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run build",
