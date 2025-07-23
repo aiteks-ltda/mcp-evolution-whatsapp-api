@@ -2,6 +2,10 @@
 
 A Model Context Protocol (MCP) server for Claude that integrates with [Evolution API](https://doc.evolution-api.com/) for WhatsApp automation.
 
+<a href="https://glama.ai/mcp/servers/@aiteks-ltda/mcp-evolution-whatsapp-api">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@aiteks-ltda/mcp-evolution-whatsapp-api/badge" alt="Evolution API MCP server" />
+</a>
+
 ## Overview
 
 This MCP server allows Claude to interact with WhatsApp through the Evolution API, enabling capabilities like:
