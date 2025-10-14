@@ -33,9 +33,11 @@ mcp-evo-api/
 
 Create a `.env` file with your Evolution API credentials:
 ```
-EVOLUTION_API_URL=https://your-evolution-api-server.com
-EVOLUTION_API_KEY=your-api-key-here
+EVOLUTION_API_URL=https://evo-api.decisao.ai/
+EVOLUTION_API_KEY=REPLACE_WITH_YOUR_REAL_KEY
 ```
+
+Note: you provided the API URL and a key. For security, never commit real API keys to the repository or share them publicly. Use a local `.env` file or a secrets manager in production.
 
 ### 📋 Deployment Options
 

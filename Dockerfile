@@ -1,32 +1,29 @@
-# Build Stage
-FROM oven/bun:1.0.29 as builder
+FROM node:20-bullseye AS builder
 
 WORKDIR /app
 
-COPY package.json bun.lockb ./
-RUN bun install --frozen-lockfile
+# Install dependencies
+COPY package.json package-lock.json* ./
+RUN npm ci --production=false --silent || npm install --silent
 
+# Copy source
 COPY . .
 
-RUN bun run build
+# Build the TypeScript project into dist
+RUN npx esbuild src/main.ts --bundle --platform=node --outfile=dist/main.js --target=node18 --format=esm && chmod +x dist/main.js
 
-# Production Stage
-FROM oven/bun:1.0.29-slim
+FROM node:20-bullseye-slim
 
 WORKDIR /app
 
-# Copy built files
+# Copy built files and production deps
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/package.json ./
-COPY --from=builder /app/bun.lockb ./
+COPY package.json package-lock.json* ./
 
-# If needed, copy env or config files
-# COPY --from=builder /app/.env ./
+# Install only production dependencies
+RUN npm ci --production --silent || npm install --production --silent
 
-RUN bun install --production --frozen-lockfile
+EXPOSE 3000
 
-# Optional: Copy node_modules if Bun has issues
-# COPY --from=builder /app/node_modules ./node_modules
-# COPY --from=builder /app/.bun ./.bun
-
-CMD ["bun", "run", "dist/main.js"]
+# Start with node (script expects to run as a stdio MCP server)
+CMD ["node", "dist/main.js"]
