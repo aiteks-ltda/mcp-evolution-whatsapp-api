@@ -1,8 +1,8 @@
 import { findGroupMembersSchema } from "./schema";
 import type { FindGroupMembersSchema } from "./schema";
-import { evolutionApi } from "@/utils/evolutionApi";
-import type { ToolRegistration } from "@/types";
-import { makeJsonSchema } from "@/utils/makeJsonSchema";
+import { evolutionApi } from "../../utils/evolutionApi";
+import type { ToolRegistration } from "../../types";
+import { makeJsonSchema } from "../../utils/makeJsonSchema";
 
 export const findGroupMembers = async (params: FindGroupMembersSchema) => {
   try {

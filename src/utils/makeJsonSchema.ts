@@ -1,4 +1,4 @@
-import type { ToolInput } from "@/types";
+import type { ToolInput } from "../types";
 import type { ZodSchema } from "zod";
 import zodToJsonSchema from "zod-to-json-schema";
 

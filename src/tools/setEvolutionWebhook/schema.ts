@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { WebhookEvent } from "@/utils/evolutionApi";
+import type { WebhookEvent } from "../../utils/evolutionApi";
 
 export const setEvolutionWebhookSchema = z.object({
   instanceName: z.string().describe("The name of the WhatsApp instance to configure webhook for"),

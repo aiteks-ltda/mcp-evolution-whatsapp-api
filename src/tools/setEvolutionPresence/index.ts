@@ -1,6 +1,6 @@
-import type { ToolRegistration } from "@/types";
-import { makeJsonSchema } from "@/utils/makeJsonSchema";
-import { evolutionApi, type PresenceStatus } from "@/utils/evolutionApi";
+import type { ToolRegistration } from "../../types";
+import { makeJsonSchema } from "../../utils/makeJsonSchema";
+import { evolutionApi, type PresenceStatus } from "../../utils/evolutionApi";
 import { type SetEvolutionPresenceSchema, setEvolutionPresenceSchema } from "./schema";
 
 export const setEvolutionPresence = async (

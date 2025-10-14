@@ -1,6 +1,6 @@
-import type { ToolRegistration } from "@/types";
-import { makeJsonSchema } from "@/utils/makeJsonSchema";
-import { evolutionApi } from "@/utils/evolutionApi";
+import type { ToolRegistration } from "../../types";
+import { makeJsonSchema } from "../../utils/makeJsonSchema";
+import { evolutionApi } from "../../utils/evolutionApi";
 import { type SendStickerSchema, sendStickerSchema } from "./schema";
 
 export const sendSticker = async (

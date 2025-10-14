@@ -1,6 +1,6 @@
-import type { ToolRegistration } from "@/types";
-import { makeJsonSchema } from "@/utils/makeJsonSchema";
-import { type SomeFunctionSchema, someFunctionSchema } from "./schema";
+import type { ToolRegistration } from "../../types.js";
+import { makeJsonSchema } from "../../utils/makeJsonSchema.js";
+import { type SomeFunctionSchema, someFunctionSchema } from "./schema.js";
 
 // Simulate an async operation
 const asyncOperation = (ms: number) =>

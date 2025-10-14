@@ -10,7 +10,7 @@ import {
 	ListToolsRequestSchema,
 	type CallToolRequest,
 } from "@modelcontextprotocol/sdk/types.js";
-import { createTools } from "./tools";
+import { createTools } from "./tools/index.js";
 
 
 /* You can remove this section if you don't need to validate command line arguments */
