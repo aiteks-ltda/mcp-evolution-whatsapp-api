@@ -90,3 +90,8 @@ If using the Docker deployment:
 | **Other Integrations** | | ❌ Chatwoot<br>❌ Websocket<br>❌ SQS<br>❌ RabbitMQ |
 
 For more information, refer to the [Evolution API Documentation](https://doc.evolution-api.com/).
+
+
+## Examples
+
+- `examples/hono-bun/` - pequeno servidor Hono para Bun (exemplo salvo). Veja `examples/hono-bun/README.md` para instruções de execução.
