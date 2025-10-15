@@ -1,6 +1,6 @@
-import type { ToolRegistration } from "@/types";
-import { evolutionApi } from "@/utils/evolutionApi";
-import { makeJsonSchema } from "@/utils/makeJsonSchema";
+import type { ToolRegistration } from "../../types";
+import { evolutionApi } from "../../utils/evolutionApi";
+import { makeJsonSchema } from "../../utils/makeJsonSchema";
 import { getEvolutionWebhookSchema, type GetEvolutionWebhookSchema } from "./schema";
 
 export async function getEvolutionWebhook(args: GetEvolutionWebhookSchema) {

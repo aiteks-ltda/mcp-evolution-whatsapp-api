@@ -1,8 +1,8 @@
 import { findGroupByJidSchema } from "./schema";
 import type { FindGroupByJidSchema } from "./schema";
-import { evolutionApi } from "@/utils/evolutionApi";
-import type { ToolRegistration } from "@/types";
-import { makeJsonSchema } from "@/utils/makeJsonSchema";
+import { evolutionApi } from "../../utils/evolutionApi";
+import type { ToolRegistration } from "../../types";
+import { makeJsonSchema } from "../../utils/makeJsonSchema";
 
 export const findGroupByJid = async (params: FindGroupByJidSchema) => {
   try {

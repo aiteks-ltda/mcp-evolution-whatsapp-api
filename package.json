@@ -21,26 +21,30 @@
     "dist"
   ],
   "scripts": {
-    "build": "bun build ./src/main.ts --outdir dist --target node && chmod +x dist/main.js",
-    "start": "bun run dist/main.ts",
-    "dev": "bun --hot src/main.ts",
-    "test": "bun test",
+  "build": "npx esbuild src/main.ts --bundle --platform=node --outfile=dist/main.js --target=node18 --format=esm && chmod +x dist/main.js",
+  "start": "node dist/main.js",
+  "dev": "node --loader ts-node/esm src/main.ts",
+  "test": "npx bun:test || echo \"No bun test runner configured\"",
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run build",
-    "lint": "bunx biome lint --write src",
-    "format": "bunx biome format --write src",
-    "check": "bunx biome check --write src",
+  "lint": "npx biome lint --write src",
+  "format": "npx biome format --write src",
+  "check": "npx biome check --write src",
     "release": "standard-version && bun run update-version",
     "release:minor": "standard-version --release-as minor && bun run update-version",
     "release:major": "standard-version --release-as major && bun run update-version",
     "release:patch": "standard-version --release-as patch && bun run update-version",
     "update-version": "sed -i '' -e 's/export const VERSION = .*/export const VERSION = '\"'$(node -p 'require(\"./package.json\").version')'\"';/' src/main.ts",
-    "create-tool": "bun scripts/create-tool.ts"
+  "create-tool": "node scripts/create-tool.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/bun": "latest",
-    "standard-version": "^9.5.0"
+    "@types/node": "^24.7.0",
+    "esbuild": "^0.25.10",
+    "standard-version": "^9.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

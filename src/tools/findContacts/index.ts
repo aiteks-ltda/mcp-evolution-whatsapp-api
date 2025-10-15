@@ -1,6 +1,6 @@
-import type { ToolRegistration } from "@/types";
-import { makeJsonSchema } from "@/utils/makeJsonSchema";
-import { evolutionApi } from "@/utils/evolutionApi";
+import type { ToolRegistration } from "../../types";
+import { makeJsonSchema } from "../../utils/makeJsonSchema";
+import { evolutionApi } from "../../utils/evolutionApi";
 import { findContactsSchema, type FindContactsSchema } from "./schema";
 
 export const findContacts = async (params: FindContactsSchema) => {

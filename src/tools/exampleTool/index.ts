@@ -1,6 +1,7 @@
-import type { ToolRegistration } from "@/types";
-import { makeJsonSchema } from "@/utils/makeJsonSchema";
-import { type SomeFunctionSchema, someFunctionSchema } from "./schema";
+gh auth status
+gh api user --jq .loginimport type { ToolRegistration } from "../../types.js";
+import { makeJsonSchema } from "../../utils/makeJsonSchema.js";
+import { type SomeFunctionSchema, someFunctionSchema } from "./schema.js";
 
 // Simulate an async operation
 const asyncOperation = (ms: number) =>
